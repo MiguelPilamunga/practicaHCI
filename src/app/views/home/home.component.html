@@ -1,11 +1,20 @@
+
+@defer {
 <app-navbar></app-navbar>
 <app-bodyhome></app-bodyhome>
-<!--
-@defer {
-
 }
-@loading (minimum 1s) {
-  //aqui se realiza laoperacion de algo hasta que cargue los recursos de la pagina
+@loading (minimum 2s) {
 
+  <
+  <div class="grid justify-center items-end py-16 ">
+  <span class=" font-extrabold  text-2xl"> {{ title() }}</span>
+    <div class="flex justify-between mb-1">
+      <span class="text-base font-medium text-blue-700 dark:text-white"> {{ title() }}</span>
+      <span class="text-sm font-medium text-blue-700 dark:text-white">45%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div [style.width.%]="progressValue()" class="bg-blue-600 h-2.5 rounded-full"></div>
+    </div>
+  </div>
 }
--->
+

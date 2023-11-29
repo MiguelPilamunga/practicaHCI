@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NavbarComponent} from "../../componentes/navbar/navbar.component";
 import {BodyhomeComponent} from "../../componentes/bodyhome/bodyhome.component";
@@ -11,5 +11,17 @@ import {BodyhomeComponent} from "../../componentes/bodyhome/bodyhome.component";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  title= signal(('Estamos preparando los mejores cursos para ti '));
+  progressValue = signal(45);
+  progressRef : number | undefined;
+  ngOnInit(): void {
+    this.progressRef = setInterval(() => {
+      this.progressValue.update(prevState => prevState + 2 );
+    } , 100);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.progressRef);
+  }
 
 }

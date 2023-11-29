@@ -14,7 +14,7 @@ import {ItemCursoComponent} from "./item-curso/item-curso.component";
 export class BodyhomeComponent {
 
   cursos =signal<CursosModel[]>([]);
-  route = signal<CursosModel[]>([]);
+  carrito = signal<CursosModel[]>([]);
   banner = signal(false);
   constructor() {
     this.cursos.set([
@@ -117,7 +117,7 @@ export class BodyhomeComponent {
   }
 
   addToRoute(event: CursosModel) {
-    this.route.update(prevState => [...prevState, event]);
+    this.carrito.update(prevState => [...prevState, event]);
   }
 
 
