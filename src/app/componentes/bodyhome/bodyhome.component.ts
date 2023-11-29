@@ -14,13 +14,13 @@ import {ItemCursoComponent} from "./item-curso/item-curso.component";
 export class BodyhomeComponent {
 
   cursos =signal<CursosModel[]>([]);
-  topics = signal<MateriaModel[]>([]);
   route = signal<CursosModel[]>([]);
+  banner = signal(false);
   constructor() {
     this.cursos.set([
       {
         id: 1,
-        nombre: 'Programación Básica',
+        nombre: 'Fundamentos de Programación',
         descripcion: 'Introducción a la programación para principiantes',
         precio: 49.99,
         imagen: 'https://picsum.photos/id/101/600/400',
@@ -43,7 +43,7 @@ export class BodyhomeComponent {
         maxCupos: 500,
       },
       {id: 3,
-        nombre: 'Machine Learning Fundamentals',
+        nombre: 'Fundamentos de Machine Learning ',
         descripcion: 'Introducción a los conceptos fundamentales de Machine Learning',
         precio: 99.99,
         imagen: 'https://picsum.photos/id/101/600/400',
@@ -55,7 +55,7 @@ export class BodyhomeComponent {
       },
       {
         id: 4,
-        nombre: 'Diseño de Interfaz de Usuario (UI/UX)',
+        nombre: 'Diseño de Interfaz de Usuario ',
         descripcion: 'Aprende a diseñar interfaces de usuario atractivas y efectivas',
         precio: 69.99,
         imagen: 'https://picsum.photos/id/404/600/400',
@@ -91,7 +91,7 @@ export class BodyhomeComponent {
       },
       {
         id: 7,
-        nombre: 'Marketing Digital Estratégico',
+        nombre: 'Marketing Digital',
         descripcion: 'Domina las estrategias de marketing en la era digital',
         precio: 79.99,
         imagen: 'https://picsum.photos/id/13/600/400',
@@ -103,7 +103,7 @@ export class BodyhomeComponent {
       },
       {
         id: 8,
-        nombre: 'Desarrollo de Videojuegos con Unity',
+        nombre: 'Desarrollo de juegos',
         descripcion: 'Crea tus propios videojuegos con la plataforma Unity',
         precio: 109.99,
         imagen: 'https://picsum.photos/id/808/600/400',
@@ -114,86 +114,14 @@ export class BodyhomeComponent {
         maxCupos: 250,
       },
     ]);
-    this.topics.set(
-      [
-        {
-          url : "https://picsum.photos/id/2/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/3/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/4/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/5/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/6/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/7/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/8/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/9/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/10/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/11/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/12/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/13/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/14/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/15/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/16/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/17/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/18/600/600",
-          title : "bissnes intellig"
-        },
-        {
-          url : "https://picsum.photos/id/19/600/600",
-          title : "bissnes intellig"
-        },
-      ]
-    )
   }
 
   addToRoute(event: CursosModel) {
     this.route.update(prevState => [...prevState, event]);
   }
 
+
+  showBanner() {
+    this.banner.update(prevState => !prevState);
+  }
 }
