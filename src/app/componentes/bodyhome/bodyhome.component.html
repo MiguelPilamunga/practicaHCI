@@ -1,0 +1,29 @@
+<div class="flex flex-col md:flex-row items-center py-10">
+  <div class="mx-auto flex flex-col md:ps-16">
+    <iframe src="https://giphy.com/embed/KAq5w47R9rmTuvWOWa" width="250" height="250"></iframe>
+    <iframe class="top-0 left-0" src="https://giphy.com/embed/UWt0rhp21JgLwoeFQP" width="60" height="60"></iframe>
+    <iframe src="https://giphy.com/embed/du3J3cXyzhj75IOgvA" width="150" height="150"></iframe>
+  </div>
+  <div class="w-full md:w-1/2 flex flex-col items-center">
+    <div class="text-center font-extrabold p-4 md:p-10">
+      <p class="text-gray-600 text-xl md:text-3xl">Ahora con más de 25000 cursos,</p>
+      <p class="text-gray-600 text-xl md:text-3xl">con una sola suscripción!</p>
+    </div>
+    <div class="text-center">
+      <button class="bg-blue-700 p-4 rounded-2xl text-white font-extrabold hover:text-gray-500 hover:bg-gray-50 hover:shadow-2xl hover:border-b-gray-500 md:text-lg">
+        Comenzar a Aprender
+      </button>
+    </div>
+    <div class="text-center py-5">
+      <button class="text-blue-700 p-4 rounded-2xl font-extrabold hover:text-white hover:bg-amber-400 md:text-lg">
+        Ya tengo una cuenta
+      </button>
+    </div>
+  </div>
+</div>
+<span class="text-3xl font-bold text-gray-500 text-center w-full grid pt-10 "> Cursos mas vendidos </span>
+<div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-6 " >
+  @for (curso of cursos();track curso ;let i=$index){
+    <app-item-curso [curso]="curso"></app-item-curso>
+  }
+</div>

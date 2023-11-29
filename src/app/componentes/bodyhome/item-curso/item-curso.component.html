@@ -1,0 +1,20 @@
+<div class="relative bg-gray-100 rounded-2xl border border-b-gray-400  flex flex-col ">
+  <div class="absolute rounded-full bg-red-700 p-2  ">
+    <span class="text-white font-bold text-sm">{{ curso.precio }}</span>
+  </div>
+  <img [src]="curso.imagen" class="h-auto w-full rounded-t-2xl ">
+  <div class="p-3 grid  ">
+    <span class=" text-xl text-blue-800 font-bold ">{{ curso.nombre }}</span>
+    <span class="text-sm text-gray-600">{{ curso.descripcion }}</span>
+  </div>
+  <div class="mt-auto p-2">
+    <span
+      class="text-sm text-gray-600 align-text-top  font-bold text-gray-500">{{ curso.maxCupos - curso.numeroEstudiantes }}
+      cupos de {{ curso.maxCupos }}</span>
+    <button class="bg-blue-700 p-3 rounded-xl text-gray-50 w-full font-bold" style="position: relative;">
+      <img src="https://cdn-icons-png.flaticon.com/128/3523/3523887.png" alt="Icono de añadir" class="mr-2 img-fluid" style="max-width: 20px; max-height: 100%; position: absolute; top: 50%; transform: translateY(-50%);">
+      Añadir a ruta
+    </button>
+  </div>
+
+</div>
